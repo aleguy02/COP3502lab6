@@ -1,8 +1,27 @@
-def add(x, y):
-    return x + y
+# Alejandro Villate
 
-def subtract(x, y):
-    return x - y
+def encode(data: str):
+    encoded_data = ''
+    for digit in data:
+        digit = int(digit) + 3
+        encoded_data += str(digit)
+    return encoded_data
 
-if __name__ == "__main__":
-    print(add(1, 2))
+
+menu = "Menu\n" \
+       "-------------\n" \
+       "1. Encode\n" \
+       "2. Decode\n" \
+       "3. Quit\n"
+
+
+_input = -1
+while _input != 3:
+    print(menu)
+    _input = int(input('Please enter an option: '))
+    if _input == 1:
+        password = input('Please enter your password to encode: ')
+        password = encode(password)  # encodes password
+        print("Your password has been encoded and stored!")
+    elif _input == 2:
+        print('Finish decode function')
